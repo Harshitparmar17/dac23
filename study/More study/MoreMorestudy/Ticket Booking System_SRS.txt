@@ -1,0 +1,207 @@
+﻿Ticket Booking System - Software Requirements Specification
+1. Introduction
+The Ticket Booking System is an online platform that allows users to book tickets for various events such as movies, concerts, sports events, etc. The system provides a user-friendly interface for browsing available events, selecting seats, and making reservations. This document outlines the functional and non-functional requirements for the Ticket Booking System.
+
+
+2. Scope
+The Ticket Booking System will provide the following features:
+
+
+User registration and login.
+Event browsing and searching.
+Seat selection and reservation.
+Payment processing.
+Ticket confirmation and generation.
+User profile management.
+Admin panel for event management and user administration.
+
+
+3. Functional Requirements
+3.1 User Registration and Login
+Users can register with the system by providing their basic information (name, email, password).
+Users can log in to the system using their registered email and password.
+
+
+3.2 Event Browsing and Searching
+Users can browse and search for events based on categories, dates, locations, etc.
+Users can view event details such as title, description, date, time, venue, and available seats.
+
+
+3.3 Seat Selection and Reservation
+Users can select seats from the available seating layout of the event venue.
+Users can choose the number of seats to reserve.
+The system should prevent double booking of seats.
+
+
+
+
+
+
+
+
+
+
+
+
+3.4 Payment Processing
+Users can make payments for their ticket reservations using various payment methods (credit card, PayPal, etc.).
+The system should securely handle payment transactions and ensure data privacy.
+
+
+3.5 Ticket Confirmation and Generation
+After successful payment, users should receive a confirmation email with the ticket details.
+Users can view and print their tickets from their user profile.
+
+
+3.6 User Profile Management
+Users can update their profile information (name, email, password, etc.).
+Users can view their booking history and ticket details.
+
+
+3.7 Admin Panel
+Admin users have access to an admin panel for managing events and users.
+Admin can add, edit, and delete events from the system.
+Admin can view and manage user accounts (block, delete, etc.).
+Admin can generate reports on ticket sales, revenue, etc
+
+
+A Ticket Booking System involves various entities that interact with each other. Here are the key entities typically involved:
+
+
+
+
+User: Represents individuals who use the Ticket Booking System. Users can have roles such as guest, registered user, or admin. They have attributes like User ID, Name, Email, and Password.
+
+
+Event: Represents a specific event for which tickets can be booked. Events have attributes such as Event ID, Title, Description, Date, Time, Venue, and Ticket Availability.
+
+
+Ticket: Represents a ticket for a specific event. Tickets have attributes like Ticket ID, Event ID, Seat Number, Price, and Status (booked, canceled, etc.).
+
+
+Booking: Represents a user's booking of one or more tickets for an event. Bookings have attributes like Booking ID, User ID, Event ID, Booking Date, Total Price, and Status (confirmed, pending, canceled).
+
+
+Payment: Represents a payment made by a user for a booking. Payments have attributes like Payment ID, Booking ID, Payment Method, Transaction ID, and Amount.
+
+
+Venue: Represents the location or venue where events take place. Venues have attributes like Venue ID, Name, Address, Capacity, and Facilities.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User
+
+
+User_ID (Primary Key)
+Name
+Email
+Password
+Role
+Event
+
+
+Event_ID (Primary Key)
+Title
+Description
+Date
+Time
+Venue_ID (Foreign Key referencing Venue table)
+Ticket_Availability
+Ticket
+
+
+Ticket_ID (Primary Key)
+Event_ID (Foreign Key referencing Event table)
+Seat_Number
+Price
+Status
+Booking
+
+
+Booking_ID (Primary Key)
+User_ID (Foreign Key referencing User table)
+Event_ID (Foreign Key referencing Event table)
+Booking_Date
+Total_Price
+Status
+Payment
+
+
+Payment_ID (Primary Key)
+Booking_ID (Foreign Key referencing Booking table)
+Payment_Method
+Transaction_ID
+Amount
+Venue
+
+
+Venue_ID (Primary Key)
+Name
+Address
+Capacity
+Facilities

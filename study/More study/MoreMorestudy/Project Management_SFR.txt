@@ -1,0 +1,194 @@
+﻿Project Management System - Functional Requirements
+
+
+1. Introduction
+The Project Management System is a web-based application designed to facilitate efficient project planning, execution, and monitoring. It enables teams to collaborate, track progress, and manage project-related tasks, resources, and timelines. This document outlines the functional requirements for the Project Management System.
+
+
+2. Scope
+The Project Management System will provide the following features:
+
+
+User registration and authentication.
+Project creation and management.
+Task assignment and tracking.
+Document and file management.
+Team collaboration and communication.
+Gantt chart visualization.
+Reporting and analytics.
+
+
+3. Functional Requirements
+3.1 User Registration and Authentication
+Users can register with the system by providing their name, email, and password.
+Users can log in to the system using their registered email and password.
+User roles and permissions (admin, project manager, team member) should be assigned.
+
+
+3.2 Project Creation and Management
+Project managers can create new projects and provide project details (title, description, start date, end date, etc.).
+Projects can be assigned to specific teams or individuals.
+Projects can be categorized based on criteria such as status, priority, or department.
+
+
+3.3 Task Assignment and Tracking
+Project managers can create tasks within a project and assign them to team members.
+Tasks should have details such as title, description, due date, and priority.
+Team members can update task status (in progress, completed, etc.) and provide progress updates.
+Task dependencies and priorities can be defined to manage task sequencing.
+
+
+3.4 Document and File Management
+Users can upload and manage project-related documents, files, and attachments.
+Documents can be categorized, tagged, and version-controlled.
+Users can access and download documents based on their project and role permissions.
+
+
+3.5 Team Collaboration and Communication
+Users can collaborate within projects through discussion forums, chat, or comments.
+Notifications and alerts should be sent to relevant users for task updates, mentions, or deadlines.
+Team members can share project-related updates, announcements, and milestones.
+
+
+
+
+A Project Management System involves various entities that interact with each other. Here are the key entities typically involved:
+
+
+User: Represents individuals who use the Project Management System. Users can have different roles such as admin, project manager, or team member. Users have personal information like name, email, and password.
+
+
+Project: Represents a specific project within the system. Each project has a unique identifier, a title, a description, and other details such as start date, end date, and priority. Projects can be assigned to project managers.
+
+
+Task: Represents a specific task or activity within a project. Tasks have attributes like a unique identifier, title, description, due date, status, and priority. Tasks can be assigned to team members.
+
+
+Document: Represents project-related documents or files. Documents can be associated with a project or task. They have attributes like a unique identifier, name, description, version number, and file attachment.
+
+
+Team: Represents a group of individuals working together on a project. A team may have multiple team members and is associated with a specific project.
+
+
+Discussion: Represents a communication channel within a project. Discussions allow users to collaborate, share updates, and discuss project-related topics. Discussions can be associated with projects, tasks, or specific users.
+
+
+Notification: Represents notifications sent to users to provide updates, reminders, or alerts about changes in projects, tasks, or discussions. Notifications may include information like the type of update, timestamp, and the associated entity.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+User
+
+
+User_ID (Primary Key)
+Name
+Email
+Password
+Role
+Project
+
+
+Project_ID (Primary Key)
+Title
+Description
+Start_Date
+End_Date
+Project_Manager_ID (Foreign Key referencing User table)
+Task
+
+
+Task_ID (Primary Key)
+Project_ID (Foreign Key referencing Project table)
+Title
+Description
+Due_Date
+Status
+Priority
+Assignee_ID (Foreign Key referencing User table)
+Document
+
+
+Document_ID (Primary Key)
+Name
+Description
+Version
+File_Path
+Project_ID (Foreign Key referencing Project table)
+Task_ID (Foreign Key referencing Task table)
+Team
+
+
+Team_ID (Primary Key)
+Name
+Project_ID (Foreign Key referencing Project table)
+Discussion
+
+
+Discussion_ID (Primary Key)
+Topic
+Message
+Timestamp
+Project_ID (Foreign Key referencing Project table)
+Task_ID (Foreign Key referencing Task table)
+User_ID (Foreign Key referencing User table)
+Notification
+
+
+Notification_ID (Primary Key)
+Content
+Timestamp
+User_ID (Foreign Key referencing User table)
+Project_ID (Foreign Key referencing Project table)
+Task_ID (Foreign Key referencing Task table)
+Discussion_ID (Foreign Key referencing Discussion table)

@@ -1,0 +1,226 @@
+﻿Software Requirements Specification (SRS) for an Employee Management System:
+1. Introduction
+The Employee Management System is a software solution designed to streamline and automate various employee-related processes within an organization. It aims to centralize employee information, facilitate efficient management of employee data, and improve overall HR operations. This document outlines the software requirements for the Employee Management System.
+
+
+2. Scope
+The Employee Management System will provide the following features:
+
+
+Employee registration and profile management.
+Attendance tracking and leave management.
+Performance evaluation and goal setting.
+Employee document management.
+Reporting and analytics.
+3. Functional Requirements
+3.1 Employee Registration and Profile Management
+Employees can register with the system by providing their personal information, such as name, contact details, and employment details.
+The system should assign a unique identifier to each employee upon registration.
+Employees should be able to create and manage their profiles, update their contact information, and view their employment details.
+
+
+3.2 Attendance Tracking and Leave Management
+The system should support recording and tracking employee attendance, including clock-in and clock-out times.
+Employees should be able to request and manage their leave applications through the system.
+Supervisors or managers should have the ability to approve or reject leave applications.
+
+
+3.3 Performance Evaluation and Goal Setting
+The system should facilitate the evaluation of employee performance through regular assessments or reviews.
+Employees and supervisors should be able to set and manage performance goals within the system.
+The system should provide a mechanism for tracking and monitoring progress towards performance goals.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+3.4 Employee Document Management
+The system should allow employees to upload and store relevant documents such as resumes, certifications, and performance reports.
+Supervisors or HR personnel should be able to review and manage employee documents.
+Access control mechanisms should be implemented to ensure the privacy and security of sensitive employee information.
+
+
+3.5 Reporting and Analytics
+The system should generate reports and analytics based on various parameters, such as employee attendance, leave balances, performance ratings, and training needs.
+Reports can include employee summaries, team performance, or turnover analysis.
+Analytics should provide insights into trends, patterns, and areas for improvement in HR processes.
+
+
+
+
+
+
+Business entities involved in an Employee Management System:
+
+
+User: Represents individuals who interact with the Employee Management System. Users can have different roles such as employees, supervisors, managers, and HR personnel. They have attributes like User ID, Name, Contact Information, and Role.
+
+
+Employee: Represents an employee within the organization. Employees have attributes such as Employee ID, Name, Email, Contact Information, and Employment Details.
+
+
+Attendance: Represents the attendance records of employees. Attendance has attributes like Attendance ID, Employee ID (Foreign Key referencing Employee table), Date, Clock-in Time, and Clock-out Time.
+
+
+Leave: Represents leave applications and balances for employees. Leave has attributes like Leave ID, Employee ID (Foreign Key referencing Employee table), Leave Type, Start Date, End Date, and Leave Status.
+
+
+Performance: Represents performance evaluations and goals for employees. Performance has attributes like Performance ID, Employee ID (Foreign Key referencing Employee table), Reviewer ID (Foreign Key referencing Employee table), Rating, Comments, and Goal Details.
+
+
+Document: Represents employee documents such as resumes, certifications, and performance reports. Documents have attributes like Document ID, Employee ID (Foreign Key referencing Employee table), Document Type, Filename, and File Path.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+Employee
+
+
+Employee_ID (Primary Key)
+First_Name
+Last_Name
+Email
+Phone_Number
+Address
+Date_of_Hire
+Department
+Manager_ID (Foreign Key referencing Employee table)
+Attendance
+
+
+Attendance_ID (Primary Key)
+Employee_ID (Foreign Key referencing Employee table)
+Date
+Clock_In_Time
+Clock_Out_Time
+Leave
+
+
+Leave_ID (Primary Key)
+Employee_ID (Foreign Key referencing Employee table)
+Start_Date
+End_Date
+Leave_Type
+Leave_Status
+Performance
+
+
+Performance_ID (Primary Key)
+Employee_ID (Foreign Key referencing Employee table)
+Reviewer_ID (Foreign Key referencing Employee table)
+Rating
+Comments
+Goal_Details
+Document
+
+
+Document_ID (Primary Key)
+Employee_ID (Foreign Key referencing Employee table)
+Document_Type
+File_Name
+File_Path
+User
+
+
+User_ID (Primary Key)
+Employee_ID (Foreign Key referencing Employee table)
+Username
+Password
+Role
